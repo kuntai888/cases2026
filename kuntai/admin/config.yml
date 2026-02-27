@@ -1,0 +1,235 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+media_folder: "public/uploads"
+public_folder: "/uploads"
+locale: "es"
+
+collections:
+  - name: "posts"
+    label: "Artículos / Articles"
+    label_singular: "Artículo / Article"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
+    summary: "{{fields.title_es}} · {{fields.category}} · {{fields.status}}"
+    sortable_fields: ["date", "title_es", "category", "status"]
+    view_filters:
+      - label: "Publicados"
+        field: status
+        pattern: "published"
+      - label: "Borradores"
+        field: status
+        pattern: "draft"
+      - label: "Destacados"
+        field: status
+        pattern: "featured"
+
+    fields:
+
+      # ── Identificación ──────────────────────────────
+      - label: "Slug (URL)"
+        name: "slug"
+        widget: "string"
+        hint: "Solo letras minúsculas, números y guiones. Ejemplo: liderazgo-consciente-2026"
+        pattern:
+          - "^[a-z0-9-]+$"
+          - "Solo letras minúsculas, números y guiones"
+
+      - label: "Fecha de publicación"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+        default: ""
+
+      - label: "Estado"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Borrador", value: "draft" }
+          - { label: "En revisión", value: "review" }
+          - { label: "Publicado", value: "published" }
+          - { label: "Destacado", value: "featured" }
+        default: "draft"
+
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Estrategia / Strategy",           value: "strategy" }
+          - { label: "Liderazgo / Leadership",          value: "leadership" }
+          - { label: "Herramientas / Tools",            value: "tools" }
+          - { label: "Casos / Cases",                   value: "cases" }
+          - { label: "Cultura / Culture",               value: "culture" }
+          - { label: "Innovación / Innovation",         value: "innovation" }
+          - { label: "Diseño Org. / Org. Design",       value: "design" }
+          - { label: "Decisiones / Decisions",          value: "decisions" }
+
+      - label: "Tiempo de lectura (minutos)"
+        name: "read_time"
+        widget: "number"
+        min: 1
+        max: 60
+        value_type: "int"
+        default: 5
+        hint: "Número entero. Ejemplo: 8"
+
+      - label: "Imagen de portada"
+        name: "cover_image"
+        widget: "image"
+        required: false
+        hint: "Recomendado: 1200×750 px, JPG o WebP"
+
+      - label: "Autor"
+        name: "author"
+        widget: "string"
+        default: "Kuntai"
+        required: false
+
+      # ── Multimedia ───────────────────────────────────
+      - label: "Audio (MP3)"
+        name: "audio_url"
+        widget: "file"
+        required: false
+        hint: "Sube el archivo de audio en MP3. Aparecerá un badge 🎵 en la tarjeta."
+        media_library:
+          config:
+            multiple: false
+
+      - label: "Video YouTube (URL)"
+        name: "youtube_url"
+        widget: "string"
+        required: false
+        hint: "Pega la URL completa de YouTube. Ejemplo: https://www.youtube.com/watch?v=XXXXXXXXX"
+        pattern:
+          - "^$|^https?://(www\\.)?(youtube\\.com|youtu\\.be)/.+"
+          - "Debe ser una URL válida de YouTube (o dejar en blanco)"
+
+      # ── Contenido Español ────────────────────────────
+      - label: "──── ESPAÑOL ────"
+        name: "divider_es"
+        widget: "hidden"
+        required: false
+
+      - label: "Título (ES)"
+        name: "title_es"
+        widget: "string"
+        hint: "Título principal en español"
+
+      - label: "Resumen / Excerpt (ES)"
+        name: "excerpt_es"
+        widget: "text"
+        hint: "2–3 oraciones que resumen el artículo. Aparece en la tarjeta."
+
+      - label: "Cuerpo del artículo (ES)"
+        name: "body_es"
+        widget: "markdown"
+        hint: "Contenido completo en español. Usa Markdown para formato."
+
+      # ── Contenido Inglés ─────────────────────────────
+      - label: "──── ENGLISH ────"
+        name: "divider_en"
+        widget: "hidden"
+        required: false
+
+      - label: "Title (EN)"
+        name: "title_en"
+        widget: "string"
+        required: false
+        hint: "Main title in English (optional)"
+
+      - label: "Excerpt (EN)"
+        name: "excerpt_en"
+        widget: "text"
+        required: false
+        hint: "2–3 sentence summary for the card (optional)"
+
+      - label: "Article body (EN)"
+        name: "body_en"
+        widget: "markdown"
+        required: false
+        hint: "Full article in English. Leave blank if not translating."
+
+  # ── Configuración del sitio ───────────────────────────
+  - name: "settings"
+    label: "Configuración del sitio"
+    files:
+
+      - label: "Redes sociales"
+        name: "social"
+        file: "content/settings/social.json"
+        fields:
+          - label: "LinkedIn (empresa)"
+            name: "linkedin_company"
+            widget: "string"
+            default: "https://www.linkedin.com/company/kuntai"
+          - label: "Grupo de LinkedIn (comunidad)"
+            name: "linkedin_group"
+            widget: "string"
+            default: "https://www.linkedin.com/groups/17528001/"
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+            default: "https://www.instagram.com/kuntai.negocios.conscientes"
+          - label: "Codex"
+            name: "codex"
+            widget: "string"
+            default: "https://orgcodex.netlify.app/"
+
+      - label: "Estadísticas del Hero"
+        name: "stats"
+        file: "content/settings/stats.json"
+        fields:
+          - label: "Líderes activos"
+            name: "leaders"
+            widget: "string"
+            default: "2.4K+"
+          - label: "Artículos publicados"
+            name: "articles"
+            widget: "string"
+            default: "120+"
+          - label: "Categorías"
+            name: "categories"
+            widget: "string"
+            default: "8"
+
+      - label: "Ticker (frases rotativas)"
+        name: "ticker"
+        file: "content/settings/ticker.json"
+        fields:
+          - label: "Frases ES"
+            name: "items_es"
+            widget: "list"
+            field:
+              label: "Frase"
+              name: "text"
+              widget: "string"
+            default:
+              - { text: "Liderazgo Consciente" }
+              - { text: "Diseño Organizacional" }
+              - { text: "Estrategia Viva" }
+              - { text: "Cultura de Alto Rendimiento" }
+              - { text: "Toma de Decisiones" }
+              - { text: "Innovación Sistémica" }
+              - { text: "Equipos Autónomos" }
+              - { text: "Transformación Real" }
+          - label: "Phrases EN"
+            name: "items_en"
+            widget: "list"
+            field:
+              label: "Phrase"
+              name: "text"
+              widget: "string"
+            default:
+              - { text: "Conscious Leadership" }
+              - { text: "Organizational Design" }
+              - { text: "Living Strategy" }
+              - { text: "High-Performance Culture" }
+              - { text: "Decision-Making" }
+              - { text: "Systemic Innovation" }
+              - { text: "Autonomous Teams" }
+              - { text: "Real Transformation" }

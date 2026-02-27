@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "slug": "organizaciones-vivas-del-organigrama-al-ecosistema",
+      "date": "2026-02-24",
+      "status": "published",
+      "category": "strategy",
+      "read_time": 9,
+      "author": "Kuntai",
+      "title_es": "Organizaciones Vivas: del organigrama al ecosistema",
+      "excerpt_es": "El paso de estructuras rígidas a sistemas biológicos adaptables que responden en tiempo real al entorno.",
+      "title_en": "Living Organizations: from org chart to ecosystem",
+      "excerpt_en": "The shift from rigid structures to adaptive biological systems that respond to the environment in real time.",
+      "cover_image": "",
+      "audio_url": "",
+      "youtube_url": ""
+    }
+  ]
+}

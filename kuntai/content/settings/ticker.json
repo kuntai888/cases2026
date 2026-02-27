@@ -1,0 +1,22 @@
+{
+  "items_es": [
+    { "text": "Liderazgo Consciente" },
+    { "text": "Diseño Organizacional" },
+    { "text": "Estrategia Viva" },
+    { "text": "Cultura de Alto Rendimiento" },
+    { "text": "Toma de Decisiones" },
+    { "text": "Innovación Sistémica" },
+    { "text": "Equipos Autónomos" },
+    { "text": "Transformación Real" }
+  ],
+  "items_en": [
+    { "text": "Conscious Leadership" },
+    { "text": "Organizational Design" },
+    { "text": "Living Strategy" },
+    { "text": "High-Performance Culture" },
+    { "text": "Decision-Making" },
+    { "text": "Systemic Innovation" },
+    { "text": "Autonomous Teams" },
+    { "text": "Real Transformation" }
+  ]
+}

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kuntai Business Awake — Casos y herramientas para liderar organizaciones vivas. Conocimiento ejecutivo para líderes que piensan diferente.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Business Awake | Kuntai">
+<meta property="og:description" content="Casos y herramientas para liderar organizaciones vivas.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<title>Business Awake | Kuntai</title>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--Y:#e5ff00;--B:#0f0f0f;--W:#fafaf7;--G1:#1c1c1c;--G2:#2e2e2e;--G3:#6b6b6b;--G4:#a8a8a8;--G5:#e8e8e4;--G6:#f2f2ef;--R:#ff3b30;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--font-mono:'DM Mono',monospace;--max:1320px;--pad:clamp(1.25rem,5vw,4rem);--r:6px;--ease-out:cubic-bezier(0.16,1,0.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--W);color:var(--B);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font-body);cursor:pointer;border:none}
+ul,ol{list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.sr-only{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}
+
+/* i18n fade */
+[data-i18n]{transition:opacity .18s ease}
+body.lang-switching [data-i18n]{opacity:0}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.anim-1{animation:fadeUp .7s var(--ease-out) .05s both}
+.anim-2{animation:fadeUp .7s var(--ease-out) .15s both}
+.anim-3{animation:fadeUp .7s var(--ease-out) .25s both}
+.anim-4{animation:fadeUp .7s var(--ease-out) .35s both}
+.anim-5{animation:fadeUp .7s var(--ease-out) .45s both}
+.anim-6{animation:fadeUp .7s var(--ease-out) .55s both}
+
+/* Ticker */
+.ticker-bar{background:var(--B);color:var(--Y);height:2.2rem;overflow:hidden;display:flex;align-items:center;border-bottom:1px solid var(--G2)}
+.ticker-label{flex-shrink:0;font-family:var(--font-mono);font-size:.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:0 1.25rem;border-right:1px solid var(--G2);height:100%;display:flex;align-items:center;background:var(--Y);color:var(--B)}
+.ticker-track{flex:1;overflow:hidden}
+.ticker-inner{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
+.ticker-item{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;padding:0 2.5rem;opacity:.7}
+.ticker-sep{font-size:.6rem;opacity:.3;flex-shrink:0}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,.92);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid var(--G5)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:4.25rem;gap:2rem}
+.nav-logo{display:flex;flex-direction:column;line-height:1}
+.nav-logo-k{font-family:var(--font-display);font-weight:900;font-size:1.15rem;letter-spacing:-.02em;text-transform:uppercase}
+.nav-logo-sub{font-family:var(--font-mono);font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:var(--G3);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-link{font-size:.7rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--G3);padding:.5rem .85rem;border-radius:var(--r);transition:color .2s,background .2s}
+.nav-link:hover,.nav-link.active{color:var(--B);background:var(--G6)}
+.nav-actions{display:flex;align-items:center;gap:.6rem}
+.btn-lang{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--font-mono);font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid var(--G5);border-radius:100px;padding:.42rem .9rem;background:transparent;color:var(--G3);cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-lang:hover{border-color:var(--B);color:var(--B);background:var(--G6)}
+.btn-lang[data-active="es"] .lang-label-es{font-weight:700;color:var(--B)}
+.btn-lang[data-active="en"] .lang-label-en{font-weight:700;color:var(--B)}
+.lang-sep{opacity:.35}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--font-body);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:100px;padding:.55rem 1.35rem;transition:all .22s var(--ease-out);cursor:pointer;border:none;white-space:nowrap;text-decoration:none}
+.btn-primary{background:var(--B);color:var(--W);box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.btn-primary:hover{background:var(--Y);color:var(--B);box-shadow:0 4px 20px rgba(229,255,0,.35);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--G3);border:1.5px solid var(--G5)}
+.btn-outline:hover{color:var(--B);border-color:var(--B);background:var(--G6)}
+.btn-yellow{background:var(--Y);color:var(--B);box-shadow:0 2px 16px rgba(229,255,0,.3)}
+.btn-yellow:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 6px 24px rgba(229,255,0,.45)}
+.nav-mobile-btn{display:none;width:2.5rem;height:2.5rem;align-items:center;justify-content:center;border-radius:var(--r);background:var(--G6);color:var(--B);border:none;cursor:pointer}
+.hamburger{width:18px;height:12px;display:flex;flex-direction:column;justify-content:space-between}
+.hamburger span{width:100%;height:1.5px;background:var(--B);border-radius:2px;transition:all .25s}
+
+/* Hero */
+.hero{padding:clamp(3rem,8vw,7rem) 0 0;border-bottom:1px solid var(--G5);overflow:hidden;position:relative}
+.hero-edition{position:absolute;top:2rem;right:var(--pad);font-family:var(--font-mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--G4);writing-mode:vertical-rl;animation:fadeIn 1s var(--ease-out) .6s both}
+.hero-inner{display:grid;grid-template-columns:1fr 380px;gap:0;min-height:480px;align-items:end}
+.hero-content{padding-bottom:clamp(2.5rem,5vw,4rem)}
+.hero-kicker{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.5rem}
+.hero-kicker-dot{width:8px;height:8px;background:var(--Y);border-radius:50%;animation:pulse 2.5s ease-in-out infinite}
+.hero-kicker-text{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--G3)}
+.hero-title{font-family:var(--font-display);font-size:clamp(3.2rem,9vw,7.5rem);font-weight:900;line-height:.88;letter-spacing:-.04em;margin-bottom:1.5rem;max-width:760px}
+.hero-title em{font-style:italic;color:var(--G3)}
+.hero-title .accent{color:var(--B);position:relative}
+.hero-title .accent::after{content:'';position:absolute;bottom:.08em;left:0;width:100%;height:.05em;background:var(--Y)}
+.hero-desc{font-size:clamp(1rem,2vw,1.2rem);color:var(--G3);line-height:1.55;max-width:480px;margin-bottom:2.25rem;font-weight:300}
+.hero-cta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.hero-stat-row{display:flex;align-items:center;gap:1.75rem;margin-top:3.5rem;padding-top:1.75rem;border-top:1px solid var(--G5)}
+.hero-stat{display:flex;flex-direction:column}
+.hero-stat-n{font-family:var(--font-display);font-size:1.6rem;font-weight:900;line-height:1;letter-spacing:-.03em}
+.hero-stat-l{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--G4);margin-top:.25rem;font-weight:500}
+.hero-stat-div{width:1px;height:2.5rem;background:var(--G5)}
+.hero-side{border-left:1px solid var(--G5);height:100%;display:flex;flex-direction:column;padding:0 0 clamp(2rem,4vw,3rem) 2.5rem;animation:fadeIn 1s var(--ease-out) .3s both}
+.hero-side-label{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--G4);margin-bottom:1.25rem}
+.hero-highlights{display:flex;flex-direction:column}
+.hero-hl{display:flex;gap:1rem;padding:1rem .5rem;border-bottom:1px solid var(--G6);cursor:pointer;border-radius:var(--r);transition:background .18s}
+.hero-hl:first-child{border-top:1px solid var(--G6)}
+.hero-hl:hover{background:var(--G6)}
+.hero-hl-num{font-family:var(--font-mono);font-size:.62rem;color:var(--G4);flex-shrink:0;margin-top:.15rem}
+.hero-hl-cat{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--Y);background:var(--B);display:inline-block;padding:1px 7px;border-radius:3px;margin-bottom:.35rem}
+.hero-hl-title{font-size:.875rem;font-weight:600;line-height:1.35;color:var(--B)}
+.hero-hl-time{font-size:.6rem;color:var(--G4);margin-top:.3rem}
+
+/* Category band */
+.cat-band{background:var(--B);padding:1.35rem 0;overflow:hidden}
+.cat-band-inner{display:flex;align-items:center;gap:.5rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.cat-band-inner::-webkit-scrollbar{display:none}
+.cat-pill{flex-shrink:0;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--G4);padding:.45rem 1.1rem;border:1px solid var(--G2);border-radius:100px;cursor:pointer;background:transparent;font-family:var(--font-body);transition:all .2s}
+.cat-pill:hover,.cat-pill.active{background:var(--Y);color:var(--B);border-color:var(--Y)}
+
+/* Section headers */
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.5rem;gap:1rem}
+.section-title{font-family:var(--font-mono);font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--G4);display:flex;align-items:center;gap:.75rem}
+.section-title::before{content:'';width:24px;height:1.5px;background:var(--Y);flex-shrink:0}
+.section-link{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--G3);display:flex;align-items:center;gap:.4rem;transition:color .2s,gap .2s}
+.section-link:hover{color:var(--B);gap:.7rem}
+.section-link::after{content:'→'}
+
+/* Featured */
+.featured{padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--G5)}
+.featured-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;align-items:start}
+.card-featured{display:flex;flex-direction:column;cursor:pointer}
+.card-featured-img{aspect-ratio:3/2;border-radius:12px;overflow:hidden;margin-bottom:1.5rem;position:relative;background:var(--G5)}
+.card-featured-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease-out)}
+.card-featured:hover .card-featured-img img{transform:scale(1.04)}
+.card-featured-badge{position:absolute;top:1rem;left:1rem;background:var(--Y);color:var(--B);font-family:var(--font-mono);font-size:.55rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .75rem;border-radius:4px}
+.card-featured-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem;flex-wrap:wrap}
+.card-cat{font-family:var(--font-mono);font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--G3)}
+.card-dot{width:3px;height:3px;background:var(--G4);border-radius:50%}
+.card-time{font-size:.6rem;color:var(--G4)}
+.card-featured-title{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:.85rem;transition:color .2s}
+.card-featured:hover .card-featured-title{color:var(--G3)}
+.card-featured-excerpt{font-size:.9375rem;line-height:1.65;color:var(--G3);font-weight:300}
+.featured-stack{display:flex;flex-direction:column}
+.card-stack{display:flex;gap:1rem;padding:1.35rem .5rem;border-bottom:1px solid var(--G5);cursor:pointer;transition:background .18s;border-radius:var(--r)}
+.card-stack:first-child{border-top:1px solid var(--G5)}
+.card-stack:hover{background:var(--G6)}
+.card-stack-img{width:80px;height:80px;border-radius:8px;overflow:hidden;flex-shrink:0;background:var(--G5)}
+.card-stack-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
+.card-stack:hover .card-stack-img img{transform:scale(1.08)}
+.card-stack-body{flex:1;display:flex;flex-direction:column}
+.card-stack-title{font-family:var(--font-display);font-size:1rem;font-weight:700;line-height:1.25;margin-bottom:.4rem;transition:color .2s}
+.card-stack:hover .card-stack-title{color:var(--G3)}
+.card-stack-excerpt{font-size:.8125rem;color:var(--G3);line-height:1.55;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-stack-meta{display:flex;align-items:center;gap:.6rem;margin-top:.6rem}
+
+/* Articles grid — auto-fill responsive */
+.articles{padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--G5)}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(1.5rem,3vw,3rem) clamp(1.25rem,2.5vw,2.5rem)}
+.articles-loading{display:flex;align-items:center;justify-content:center;gap:.75rem;padding:4rem 0;color:var(--G4);font-family:var(--font-mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase}
+.articles-spinner{width:1rem;height:1rem;border:2px solid var(--G5);border-top-color:var(--Y);border-radius:50%;animation:spin .8s linear infinite}
+.articles-empty{grid-column:1/-1;text-align:center;padding:4rem 0}
+.articles-empty-icon{font-size:2rem;margin-bottom:1rem;opacity:.4}
+.articles-empty-text{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--G4)}
+
+/* Card Article */
+.card-article{display:flex;flex-direction:column;cursor:pointer}
+.card-article-img{aspect-ratio:16/10;border-radius:10px;overflow:hidden;margin-bottom:1.1rem;background:var(--G5);position:relative}
+.card-article-img img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ease-out)}
+.card-article:hover .card-article-img img{transform:scale(1.05)}
+.img-ph{width:100%;height:100%}
+.ph-1{background:linear-gradient(135deg,#1a1a2e,#16213e 50%,#0f3460)}
+.ph-2{background:linear-gradient(135deg,#2d1b69,#11998e)}
+.ph-3{background:linear-gradient(135deg,#373b44,#4286f4)}
+.ph-4{background:linear-gradient(135deg,#1a1a1a,#363636 50%,#e5ff00)}
+.ph-5{background:linear-gradient(135deg,#0f2027,#203a43 50%,#2c5364)}
+.ph-6{background:linear-gradient(135deg,#544a7d,#ffd452)}
+.ph-pattern{width:100%;height:100%;opacity:.18;background-image:repeating-linear-gradient(0deg,transparent,transparent 30px,rgba(255,255,255,.04) 30px,rgba(255,255,255,.04) 31px),repeating-linear-gradient(90deg,transparent,transparent 30px,rgba(255,255,255,.04) 30px,rgba(255,255,255,.04) 31px)}
+.ph-label{position:absolute;bottom:.85rem;left:.85rem;font-family:var(--font-display);font-size:clamp(.85rem,2.5vw,1.1rem);font-weight:700;font-style:italic;color:rgba(255,255,255,.55);letter-spacing:-.02em;line-height:1.2;max-width:80%}
+.media-indicators{position:absolute;top:.75rem;right:.75rem;display:flex;gap:.35rem;flex-wrap:wrap}
+.media-badge{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--font-mono);font-size:.5rem;font-weight:500;letter-spacing:.08em;background:rgba(15,15,15,.82);color:#fafaf7;padding:.25rem .55rem;border-radius:4px;backdrop-filter:blur(4px)}
+.media-badge--audio{border-left:2px solid var(--Y)}
+.media-badge--video{border-left:2px solid var(--R)}
+.card-article-meta{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;flex-wrap:wrap}
+.card-article-title{font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.25rem);font-weight:700;line-height:1.2;margin-bottom:.6rem;transition:color .2s;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-article:hover .card-article-title{color:var(--G3)}
+.card-article-excerpt{font-size:.85rem;color:var(--G3);line-height:1.6;font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1;margin-bottom:.85rem}
+.card-article-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid var(--G5);margin-top:auto}
+.card-author{display:flex;align-items:center;gap:.55rem}
+.card-author-av{width:1.75rem;height:1.75rem;border-radius:50%;background:var(--B);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.6rem;font-weight:900;color:var(--Y);flex-shrink:0}
+.card-author-name{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--B)}
+.card-read-btn{font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--G3);display:flex;align-items:center;gap:.3rem;transition:color .2s,gap .2s}
+.card-article:hover .card-read-btn{color:var(--B);gap:.55rem}
+.card-read-btn::after{content:'→'}
+
+/* Banner */
+.banner{background:var(--B);padding:clamp(3.5rem,7vw,6rem) 0;position:relative;overflow:hidden}
+.banner::before{content:'';position:absolute;top:-60%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(229,255,0,.08),transparent 65%);pointer-events:none}
+.banner::after{content:'';position:absolute;bottom:-40%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(229,255,0,.05),transparent 65%);pointer-events:none}
+.banner-inner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;position:relative;z-index:1}
+.banner-eyebrow{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--Y);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.banner-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--Y)}
+.banner-title{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,3rem);font-weight:900;color:var(--W);line-height:1.05;letter-spacing:-.03em;margin-bottom:.85rem}
+.banner-title em{font-style:italic;color:var(--Y)}
+.banner-desc{font-size:.9375rem;color:var(--G4);line-height:1.6;font-weight:300;max-width:480px}
+.banner-cta-box{display:flex;flex-direction:column;align-items:center;gap:.75rem;min-width:260px}
+.banner-disclaimer{font-size:.6rem;color:var(--G3);text-align:center;letter-spacing:.04em}
+
+/* Topics */
+.topics{padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--G5)}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.topic-card{background:var(--G6);border-radius:12px;padding:1.75rem 1.5rem;cursor:pointer;transition:all .25s var(--ease-out);position:relative;overflow:hidden;border:1.5px solid transparent}
+.topic-card::before{content:'';position:absolute;inset:0;background:var(--B);transform:scaleY(0);transform-origin:bottom;transition:transform .3s var(--ease-out);z-index:0}
+.topic-card:hover::before{transform:scaleY(1)}
+.topic-card:hover{border-color:var(--B)}
+.topic-card>*{position:relative;z-index:1}
+.topic-icon{width:2.5rem;height:2.5rem;background:var(--B);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1rem;transition:background .3s}
+.topic-card:hover .topic-icon{background:var(--Y)}
+.topic-name{font-size:.875rem;font-weight:700;color:var(--B);margin-bottom:.4rem;transition:color .3s}
+.topic-card:hover .topic-name{color:var(--W)}
+.topic-count{font-family:var(--font-mono);font-size:.6rem;color:var(--G4);letter-spacing:.08em;transition:color .3s}
+.topic-card:hover .topic-count{color:var(--G3)}
+.topic-arrow{position:absolute;bottom:1.5rem;right:1.5rem;font-size:.8rem;color:var(--G4);transition:color .3s,transform .3s}
+.topic-card:hover .topic-arrow{color:var(--Y);transform:translate(3px,-3px)}
+
+/* Manifesto */
+.manifesto{padding:clamp(4rem,8vw,7rem) 0;border-bottom:1px solid var(--G5);background:var(--B);position:relative;overflow:hidden}
+.manifesto::before{content:'AWAKE';position:absolute;font-family:var(--font-display);font-size:clamp(8rem,20vw,18rem);font-weight:900;color:rgba(255,255,255,.025);right:-2%;top:50%;transform:translateY(-50%);letter-spacing:-.06em;pointer-events:none;user-select:none}
+.manifesto-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,6vw,6rem);align-items:center}
+.manifesto-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--Y);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.manifesto-label::before{content:'';width:20px;height:1.5px;background:var(--Y)}
+.manifesto-title{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;color:var(--W);line-height:1.05;letter-spacing:-.04em;margin-bottom:1.75rem}
+.manifesto-title em{font-style:italic;color:var(--Y)}
+.manifesto-body{display:flex;flex-direction:column;gap:1rem}
+.manifesto-p{font-size:.9375rem;color:var(--G4);line-height:1.7;font-weight:300}
+.manifesto-values{display:flex;flex-direction:column;gap:1rem}
+.manifesto-val{display:flex;gap:1.25rem;padding:1.5rem;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.06);transition:background .2s,border-color .2s}
+.manifesto-val:hover{background:rgba(229,255,0,.04);border-color:rgba(229,255,0,.12)}
+.manifesto-val-num{font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--Y);opacity:.5;flex-shrink:0;line-height:1}
+.manifesto-val-title{font-size:.875rem;font-weight:700;color:var(--W);margin-bottom:.35rem}
+.manifesto-val-desc{font-size:.8125rem;color:var(--G4);line-height:1.55;font-weight:300}
+
+/* Footer */
+.footer{background:var(--B);border-top:1px solid var(--G2)}
+.footer-main{padding:clamp(3rem,6vw,5rem) 0 clamp(2rem,4vw,3rem);display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;border-bottom:1px solid var(--G2)}
+.footer-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--W);letter-spacing:-.04em;text-transform:uppercase;margin-bottom:.4rem}
+.footer-tagline{font-size:.75rem;color:var(--G3);line-height:1.55;font-weight:300;margin-bottom:1.5rem;max-width:220px}
+.footer-social{display:flex;gap:.5rem;flex-wrap:wrap}
+.footer-soc-btn{width:2.25rem;height:2.25rem;border-radius:8px;background:var(--G2);color:var(--G4);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;font-family:var(--font-mono);transition:all .2s;border:none;text-decoration:none}
+.footer-soc-btn:hover{background:var(--Y);color:var(--B)}
+.footer-col-title{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--G3);margin-bottom:1.25rem}
+.footer-links-list{display:flex;flex-direction:column;gap:.6rem}
+.footer-link{font-size:.8125rem;color:var(--G3);transition:color .18s}
+.footer-link:hover{color:var(--W)}
+.footer-bottom{padding:1.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-copy{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;color:var(--G3)}
+.footer-admin-link{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.1em;color:var(--G2);transition:color .2s}
+.footer-admin-link:hover{color:var(--G4)}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--font-mono);font-size:.55rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .7rem;border-radius:4px}
+.badge-y{background:var(--Y);color:var(--B)}
+.badge-b{background:var(--B);color:var(--Y)}
+.badge-g{background:var(--G5);color:var(--G3)}
+.badge-r{background:rgba(255,59,48,.12);color:var(--R)}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:currentColor;animation:pulse 2s ease-in-out infinite}
+
+/* Responsive */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr 320px}
+  .featured-grid{grid-template-columns:1fr 1fr}
+  .footer-main{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:900px){
+  .manifesto-inner{grid-template-columns:1fr;gap:2.5rem}
+  .banner-inner{grid-template-columns:1fr}
+  .banner-cta-box{align-items:flex-start;min-width:unset}
+}
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-side{display:none}
+  .hero-edition{display:none}
+  .featured-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .nav-mobile-btn{display:flex}
+}
+@media(max-width:600px){
+  .footer-main{grid-template-columns:1fr;gap:2rem}
+  .hero-stat-row{gap:1.25rem;flex-wrap:wrap}
+  .hero-cta{flex-direction:column;align-items:flex-start}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:.75rem}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar" aria-hidden="true">
+  <span class="ticker-label">Live</span>
+  <div class="ticker-track"><div class="ticker-inner" id="tickerInner"></div></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Navegación principal">
+  <div class="wrap nav-inner">
+    <a href="#" class="nav-logo" aria-label="Kuntai Business Awake — Inicio">
+      <span class="nav-logo-k">Kuntai</span>
+      <span class="nav-logo-sub">Business Awake</span>
+    </a>
+    <div class="nav-links" role="list">
+      <a href="#"          class="nav-link active" role="listitem" data-i18n="nav_home">Inicio</a>
+      <a href="#articulos" class="nav-link"        role="listitem" data-i18n="nav_articles">Artículos</a>
+      <a href="#temas"     class="nav-link"        role="listitem" data-i18n="nav_topics">Temas</a>
+      <a href="#nosotros"  class="nav-link"        role="listitem" data-i18n="nav_about">Nosotros</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-lang" id="langToggle" data-active="es" onclick="toggleLang()" aria-label="Cambiar idioma / Switch language">
+        <span class="lang-label-es" style="font-weight:700;color:var(--B)">ES</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-label-en" style="color:var(--G3)">EN</span>
+      </button>
+      <a class="btn btn-primary" href="https://www.linkedin.com/groups/17528001/" target="_blank" rel="noopener noreferrer" data-i18n="nav_join">Unirse al grupo</a>
+      <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title-id">
+  <div class="wrap">
+    <span class="hero-edition" data-i18n="hero_edition" aria-hidden="true">Vol. 04 — 2026</span>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-kicker anim-1">
+          <span class="hero-kicker-dot" aria-hidden="true"></span>
+          <span class="hero-kicker-text" data-i18n="hero_kicker">Conocimiento ejecutivo · Edición semanal</span>
+        </div>
+        <h1 class="hero-title anim-2" id="hero-title-id" data-i18n="hero_title">
+          Organiza&shy;ciones<br><em>vivas</em> para un<br>mundo <span class="accent">complejo</span>
+        </h1>
+        <p class="hero-desc anim-3" data-i18n="hero_desc">Casos reales, herramientas probadas y marcos mentales para líderes que construyen organizaciones adaptables, humanas y de alto impacto.</p>
+        <div class="hero-cta anim-4">
+          <button class="btn btn-primary" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})" data-i18n="hero_cta1">Leer esta semana</button>
+          <a class="btn btn-outline" href="https://www.linkedin.com/groups/17528001/" target="_blank" rel="noopener noreferrer" data-i18n="hero_cta2">Unirse gratis →</a>
+        </div>
+        <div class="hero-stat-row anim-5">
+          <div class="hero-stat"><span class="hero-stat-n">2.4K+</span><span class="hero-stat-l" data-i18n="stat1">Líderes activos</span></div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat"><span class="hero-stat-n">120+</span><span class="hero-stat-l" data-i18n="stat2">Artículos publicados</span></div>
+          <div class="hero-stat-div" aria-hidden="true"></div>
+          <div class="hero-stat"><span class="hero-stat-n">8</span><span class="hero-stat-l" data-i18n="stat3">Categorías temáticas</span></div>
+        </div>
+      </div>
+      <aside class="hero-side anim-6">
+        <p class="hero-side-label" data-i18n="side_label">En esta edición</p>
+        <div class="hero-highlights">
+          <div class="hero-hl" tabindex="0" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">
+            <span class="hero-hl-num">01</span>
+            <div><span class="hero-hl-cat" data-i18n="cat_leadership">Liderazgo</span><p class="hero-hl-title" data-i18n="hl1_title">El fin de la planificación anual: por qué tus OKRs no funcionan</p><p class="hero-hl-time" data-i18n="hl1_time">8 min · Esta semana</p></div>
+          </div>
+          <div class="hero-hl" tabindex="0" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">
+            <span class="hero-hl-num">02</span>
+            <div><span class="hero-hl-cat" data-i18n="cat_culture">Cultura</span><p class="hero-hl-title" data-i18n="hl2_title">Directivos que escuchan: el superpoder más subestimado</p><p class="hero-hl-time" data-i18n="hl2_time">6 min · Esta semana</p></div>
+          </div>
+          <div class="hero-hl" tabindex="0" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">
+            <span class="hero-hl-num">03</span>
+            <div><span class="hero-hl-cat" data-i18n="cat_strategy">Estrategia</span><p class="hero-hl-title" data-i18n="hl3_title">After Action Review: cómo el ejército aprendió a fallar bien</p><p class="hero-hl-time" data-i18n="hl3_time">5 min · Esta semana</p></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY BAND -->
+<nav class="cat-band" aria-label="Filtrar por categoría">
+  <div class="wrap">
+    <div class="cat-band-inner" role="list">
+      <button class="cat-pill active" role="listitem" onclick="filterCat(this,'all')"        data-i18n="cat_all">Todos</button>
+      <button class="cat-pill"        role="listitem" onclick="filterCat(this,'strategy')"   data-i18n="cat_strategy">Estrategia</button>
+      <button class="cat-pill"        role="listitem" onclick="filterCat(this,'leadership')" data-i18n="cat_leadership">Liderazgo</button>
+      <button class="cat-pill"        role="listitem" onclick="filterCat(this,'tools')"      data-i18n="cat_tools">Herramientas</button>
+      <button class="cat-pill"        role="listitem" onclick="filterCat(this,'cases')"      data-i18n="cat_cases">Casos</button>
+      <button class="cat-pill"        role="listitem" onclick="filterCat(this,'culture')"    data-i18n="cat_culture">Cultura</button>
+      <button class="cat-pill"        role="listitem" onclick="filterCat(this,'innovation')" data-i18n="cat_innovation">Innovación</button>
+    </div>
+  </div>
+</nav>
+
+<!-- FEATURED -->
+<section class="featured" aria-labelledby="featured-title" id="featured">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="section-title" id="featured-title" data-i18n="sec_featured">Artículo de la semana</h2>
+      <a href="#articulos" class="section-link" data-i18n="sec_seeall">Ver todos</a>
+    </div>
+    <div class="featured-grid">
+      <article class="card-featured anim-1" tabindex="0" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">
+        <div class="card-featured-img">
+          <div class="img-ph ph-1" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label" data-i18n="feat_img_label">Liderazgo<br>Consciente</span></div>
+          <span class="card-featured-badge" data-i18n="feat_badge">✦ Destacado</span>
+        </div>
+        <div class="card-featured-meta">
+          <span class="card-cat" data-i18n="cat_leadership">Liderazgo</span>
+          <span class="card-dot" aria-hidden="true"></span>
+          <span class="card-time" data-i18n="feat_time">12 min de lectura</span>
+          <span class="card-dot" aria-hidden="true"></span>
+          <span class="badge badge-r"><span class="badge-dot"></span> <span data-i18n="badge_new">Nuevo</span></span>
+        </div>
+        <h3 class="card-featured-title" data-i18n="feat_title">Por qué las organizaciones jerárquicas morirán en la próxima década — y qué hacer ahora</h3>
+        <p class="card-featured-excerpt" data-i18n="feat_excerpt">Las estructuras piramidales fueron diseñadas para un mundo predecible. En un entorno de cambio constante, son una trampa.</p>
+      </article>
+      <div class="featured-stack">
+        <article class="card-stack anim-2" tabindex="0" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">
+          <div class="card-stack-img"><div class="img-ph ph-2" style="width:100%;height:100%;"></div></div>
+          <div class="card-stack-body">
+            <div class="card-article-meta" style="margin-bottom:.4rem;"><span class="card-cat" data-i18n="cat_strategy">Estrategia</span><span class="card-dot" aria-hidden="true"></span><span class="card-time">8 min</span></div>
+            <h3 class="card-stack-title" data-i18n="s1_title">El modelo de los tres horizontes: planifica sin matar la agilidad</h3>
+            <p class="card-stack-excerpt" data-i18n="s1_excerpt">Cómo McKinsey piensa el tiempo y por qué deberías adoptarlo en tus revisiones trimestrales.</p>
+            <div class="card-stack-meta"><span class="badge badge-g" data-i18n="badge_tool">Herramienta</span></div>
+          </div>
+        </article>
+        <article class="card-stack anim-3" tabindex="0" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">
+          <div class="card-stack-img"><div class="img-ph ph-3" style="width:100%;height:100%;"></div></div>
+          <div class="card-stack-body">
+            <div class="card-article-meta" style="margin-bottom:.4rem;"><span class="card-cat" data-i18n="cat_culture">Cultura</span><span class="card-dot" aria-hidden="true"></span><span class="card-time">6 min</span></div>
+            <h3 class="card-stack-title" data-i18n="s2_title">Psicología de seguridad: el ingrediente invisible de los mejores equipos</h3>
+            <p class="card-stack-excerpt" data-i18n="s2_excerpt">El estudio de Google que cambió cómo entendemos la alta performance colectiva.</p>
+            <div class="card-stack-meta"><span class="badge badge-g" data-i18n="badge_case">Caso</span></div>
+          </div>
+        </article>
+        <article class="card-stack anim-4" tabindex="0" onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">
+          <div class="card-stack-img"><div class="img-ph ph-4" style="width:100%;height:100%;"></div></div>
+          <div class="card-stack-body">
+            <div class="card-article-meta" style="margin-bottom:.4rem;"><span class="card-cat" data-i18n="cat_tools">Herramientas</span><span class="card-dot" aria-hidden="true"></span><span class="card-time">5 min</span></div>
+            <h3 class="card-stack-title" data-i18n="s3_title">Jobs-to-be-Done para equipos internos: ¿qué trabajo contrata tu organización?</h3>
+            <p class="card-stack-excerpt" data-i18n="s3_excerpt">Una forma radical de repensar roles, procesos y expectativas dentro de tu empresa.</p>
+            <div class="card-stack-meta"><span class="badge badge-g" data-i18n="badge_framework">Framework</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="articles" aria-labelledby="articles-title" id="articulos">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="section-title" id="articles-title" data-i18n="sec_recent">Artículos recientes</h2>
+      <a href="#" class="section-link" data-i18n="sec_archive">Ver archivo</a>
+    </div>
+    <div class="articles-loading" id="articlesLoading" role="status" aria-live="polite">
+      <div class="articles-spinner" aria-hidden="true"></div>
+      <span data-i18n="loading_posts">Cargando artículos...</span>
+    </div>
+    <div class="articles-grid" id="articlesGrid"     style="display:none;" aria-live="polite"></div>
+    <div class="articles-grid" id="articlesFallback" style="display:none;">
+      <article class="card-article" data-cat="strategy" tabindex="0" onclick="void(0)">
+        <div class="card-article-img"><div class="img-ph ph-1" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label" data-i18n="a1_img">Estrategia<br>Adaptativa</span></div></div>
+        <div class="card-article-meta"><span class="badge badge-b" data-i18n="cat_strategy">Estrategia</span><span class="card-time">9 min</span></div>
+        <h3 class="card-article-title" data-i18n="a1_title">Organizaciones Vivas: del organigrama al ecosistema</h3>
+        <p class="card-article-excerpt" data-i18n="a1_excerpt">El paso de estructuras rígidas a sistemas biológicos adaptables que responden en tiempo real al entorno.</p>
+        <div class="card-article-footer"><div class="card-author"><div class="card-author-av" aria-hidden="true">K</div><span class="card-author-name">Kuntai</span></div><span class="card-read-btn" data-i18n="read">Leer</span></div>
+      </article>
+      <article class="card-article" data-cat="tools" tabindex="0" onclick="void(0)">
+        <div class="card-article-img"><div class="img-ph ph-2" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label" data-i18n="a2_img">Decisiones<br>Complejas</span></div></div>
+        <div class="card-article-meta"><span class="badge badge-b" data-i18n="cat_tools">Herramientas</span><span class="card-time">7 min</span></div>
+        <h3 class="card-article-title" data-i18n="a2_title">Cynefin en la práctica: decide mejor en entornos caóticos</h3>
+        <p class="card-article-excerpt" data-i18n="a2_excerpt">El marco de Dave Snowden traducido a situaciones reales de directivos que deben actuar rápido sin datos completos.</p>
+        <div class="card-article-footer"><div class="card-author"><div class="card-author-av" aria-hidden="true">K</div><span class="card-author-name">Kuntai</span></div><span class="card-read-btn" data-i18n="read">Leer</span></div>
+      </article>
+      <article class="card-article" data-cat="leadership" tabindex="0" onclick="void(0)">
+        <div class="card-article-img"><div class="img-ph ph-3" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label" data-i18n="a3_img">Feedback<br>Radical</span></div></div>
+        <div class="card-article-meta"><span class="badge badge-b" data-i18n="cat_leadership">Liderazgo</span><span class="card-time">6 min</span></div>
+        <h3 class="card-article-title" data-i18n="a3_title">Candor Radical: el método de Kim Scott para conversaciones difíciles</h3>
+        <p class="card-article-excerpt" data-i18n="a3_excerpt">Cómo dar feedback que transforma sin destruir la confianza. El modelo que usa Netflix y cambió Silicon Valley.</p>
+        <div class="card-article-footer"><div class="card-author"><div class="card-author-av" aria-hidden="true">K</div><span class="card-author-name">Kuntai</span></div><span class="card-read-btn" data-i18n="read">Leer</span></div>
+      </article>
+      <article class="card-article" data-cat="culture" tabindex="0" onclick="void(0)">
+        <div class="card-article-img"><div class="img-ph ph-4" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label" data-i18n="a4_img">Propósito<br>Real</span></div></div>
+        <div class="card-article-meta"><span class="badge badge-b" data-i18n="cat_culture">Cultura</span><span class="card-time">11 min</span></div>
+        <h3 class="card-article-title" data-i18n="a4_title">Propósito no es un eslogan: cómo construirlo con tu equipo en 90 días</h3>
+        <p class="card-article-excerpt" data-i18n="a4_excerpt">Guía paso a paso para articular un propósito organizacional que no quede en el PowerPoint de bienvenida.</p>
+        <div class="card-article-footer"><div class="card-author"><div class="card-author-av" aria-hidden="true">K</div><span class="card-author-name">Kuntai</span></div><span class="card-read-btn" data-i18n="read">Leer</span></div>
+      </article>
+      <article class="card-article" data-cat="innovation" tabindex="0" onclick="void(0)">
+        <div class="card-article-img"><div class="img-ph ph-5" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label" data-i18n="a5_img">Innovación<br>Sistemática</span></div></div>
+        <div class="card-article-meta"><span class="badge badge-b" data-i18n="cat_innovation">Innovación</span><span class="card-time">8 min</span></div>
+        <h3 class="card-article-title" data-i18n="a5_title">Design Thinking no es lo que crees: el lado oscuro del método IDEO</h3>
+        <p class="card-article-excerpt" data-i18n="a5_excerpt">Por qué tantos talleres de innovación fallan y qué condiciones organizacionales necesita realmente el método.</p>
+        <div class="card-article-footer"><div class="card-author"><div class="card-author-av" aria-hidden="true">K</div><span class="card-author-name">Kuntai</span></div><span class="card-read-btn" data-i18n="read">Leer</span></div>
+      </article>
+      <article class="card-article" data-cat="cases" tabindex="0" onclick="void(0)">
+        <div class="card-article-img"><div class="img-ph ph-6" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label" data-i18n="a6_img">Equipos<br>Autónomos</span></div></div>
+        <div class="card-article-meta"><span class="badge badge-b" data-i18n="cat_cases">Casos</span><span class="card-time">10 min</span></div>
+        <h3 class="card-article-title" data-i18n="a6_title">Buurtzorg: cómo 14,000 enfermeras se autogestionan sin jefes intermedios</h3>
+        <p class="card-article-excerpt" data-i18n="a6_excerpt">El caso holandés que rompió todos los esquemas del sector salud y qué principios pueden trasplantarse a tu organización.</p>
+        <div class="card-article-footer"><div class="card-author"><div class="card-author-av" aria-hidden="true">K</div><span class="card-author-name">Kuntai</span></div><span class="card-read-btn" data-i18n="read">Leer</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner" aria-labelledby="banner-title" id="comunidad">
+  <div class="wrap">
+    <div class="banner-inner">
+      <div>
+        <p class="banner-eyebrow" data-i18n="banner_eyebrow">Comunidad Kuntai</p>
+        <h2 class="banner-title" id="banner-title" data-i18n="banner_title">Únete al grupo y<br><em>dialoga</em> con líderes</h2>
+        <p class="banner-desc" data-i18n="banner_desc">Un espacio en LinkedIn para directivos y líderes de LATAM que construyen organizaciones más humanas, adaptables y de alto impacto. Comparte, aprende y conecta.</p>
+      </div>
+      <div class="banner-cta-box">
+        <a class="btn btn-yellow" style="width:100%;justify-content:center;font-size:.85rem;padding:1rem;"
+           href="https://www.linkedin.com/groups/17528001/" target="_blank" rel="noopener noreferrer"
+           data-i18n="banner_cta">Unirme al grupo →</a>
+        <p class="banner-disclaimer" data-i18n="banner_disc">Comunidad en LinkedIn · Gratuito · Líderes de LATAM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="topics" aria-labelledby="topics-title" id="temas">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="section-title" id="topics-title" data-i18n="sec_topics">Explorar por tema</h2>
+    </div>
+    <div class="topics-grid">
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill[onclick*=strategy]'),'strategy')"><div class="topic-icon" aria-hidden="true">⚡</div><h3 class="topic-name" data-i18n="cat_strategy">Estrategia</h3><p class="topic-count" data-i18n="t1_count">14 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill[onclick*=leadership]'),'leadership')"><div class="topic-icon" aria-hidden="true">🧭</div><h3 class="topic-name" data-i18n="cat_leadership">Liderazgo</h3><p class="topic-count" data-i18n="t2_count">11 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill[onclick*=tools]'),'tools')"><div class="topic-icon" aria-hidden="true">🛠</div><h3 class="topic-name" data-i18n="cat_tools">Herramientas</h3><p class="topic-count" data-i18n="t3_count">9 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill[onclick*=culture]'),'culture')"><div class="topic-icon" aria-hidden="true">🌱</div><h3 class="topic-name" data-i18n="cat_culture">Cultura</h3><p class="topic-count" data-i18n="t4_count">8 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill[onclick*=cases]'),'cases')"><div class="topic-icon" aria-hidden="true">🔬</div><h3 class="topic-name" data-i18n="cat_cases">Casos reales</h3><p class="topic-count" data-i18n="t5_count">6 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill[onclick*=innovation]'),'innovation')"><div class="topic-icon" aria-hidden="true">💡</div><h3 class="topic-name" data-i18n="cat_innovation">Innovación</h3><p class="topic-count" data-i18n="t6_count">5 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill'),'all')"><div class="topic-icon" aria-hidden="true">📐</div><h3 class="topic-name" data-i18n="cat_design">Diseño org.</h3><p class="topic-count" data-i18n="t7_count">4 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+      <article class="topic-card" tabindex="0" role="link" onclick="filterCat(document.querySelector('.cat-pill'),'all')"><div class="topic-icon" aria-hidden="true">🎯</div><h3 class="topic-name" data-i18n="cat_decisions">Decisiones</h3><p class="topic-count" data-i18n="t8_count">3 artículos</p><span class="topic-arrow" aria-hidden="true">↗</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" aria-labelledby="manifesto-title" id="nosotros">
+  <div class="wrap">
+    <div class="manifesto-inner">
+      <div>
+        <p class="manifesto-label" data-i18n="mani_label">Nuestro enfoque</p>
+        <h2 class="manifesto-title" id="manifesto-title" data-i18n="mani_title">Lideramos el<br>cambio hacia<br><em>organizaciones</em><br>conscientes</h2>
+        <div class="manifesto-body">
+          <p class="manifesto-p" data-i18n="mani_p1">Kuntai nació de una convicción simple: el mundo tiene suficiente teoría y demasiado poco conocimiento accionable. No publicamos frameworks por publicar — cada pieza que compartimos ha sido probada en organizaciones reales, con equipos reales, enfrentando problemas reales.</p>
+          <p class="manifesto-p" data-i18n="mani_p2">Somos practitioners primero, escritores segundo. Eso cambia la calidad de lo que lees.</p>
+          <div style="margin-top:1.5rem;">
+            <a class="btn btn-yellow" href="https://www.linkedin.com/groups/17528001/" target="_blank" rel="noopener noreferrer" data-i18n="mani_cta">Conocer más →</a>
+          </div>
+        </div>
+      </div>
+      <div class="manifesto-values" role="list">
+        <div class="manifesto-val" role="listitem">
+          <span class="manifesto-val-num" aria-hidden="true">01</span>
+          <div class="manifesto-val-body"><h3 class="manifesto-val-title" data-i18n="val1_title">Profundidad sobre volumen</h3><p class="manifesto-val-desc" data-i18n="val1_desc">Un artículo a la semana, investigado a fondo, con fuentes, datos y perspectiva propia. Nunca contenido de relleno.</p></div>
+        </div>
+        <div class="manifesto-val" role="listitem">
+          <span class="manifesto-val-num" aria-hidden="true">02</span>
+          <div class="manifesto-val-body"><h3 class="manifesto-val-title" data-i18n="val2_title">Accionable por diseño</h3><p class="manifesto-val-desc" data-i18n="val2_desc">Cada pieza termina con algo concreto: una herramienta, una pregunta, un experimento. Sin conclusiones vacías.</p></div>
+        </div>
+        <div class="manifesto-val" role="listitem">
+          <span class="manifesto-val-num" aria-hidden="true">03</span>
+          <div class="manifesto-val-body"><h3 class="manifesto-val-title" data-i18n="val3_title">Organizaciones como sistemas vivos</h3><p class="manifesto-val-desc" data-i18n="val3_desc">Nuestra lente teórica: complejidad, sistemas adaptativos y teoría organizacional del siglo XXI.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <p class="footer-logo">Kuntai</p>
+        <p class="footer-tagline" data-i18n="foot_tagline">Casos y herramientas para liderar organizaciones vivas.</p>
+        <nav class="footer-social" aria-label="Redes sociales">
+          <a class="footer-soc-btn" aria-label="LinkedIn Empresa"  href="https://www.linkedin.com/company/kuntai"                        target="_blank" rel="noopener noreferrer">in</a>
+          <a class="footer-soc-btn" aria-label="Instagram"         href="https://www.instagram.com/kuntai.negocios.conscientes"           target="_blank" rel="noopener noreferrer">ig</a>
+          <a class="footer-soc-btn" aria-label="Codex"             href="https://orgcodex.netlify.app/"                                   target="_blank" rel="noopener noreferrer">cx</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="foot_col1">Publicación</p>
+        <ul class="footer-links-list">
+          <li><a href="#articulos" class="footer-link" data-i18n="nav_articles">Artículos</a></li>
+          <li><a href="#featured"  class="footer-link" data-i18n="foot_featured">Destacados</a></li>
+          <li><a href="#temas"     class="footer-link" data-i18n="nav_topics">Temas</a></li>
+          <li><a href="#nosotros"  class="footer-link" data-i18n="nav_about">Nosotros</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="foot_col2">Comunidad</p>
+        <ul class="footer-links-list">
+          <li><a href="https://www.linkedin.com/groups/17528001/"                      class="footer-link" target="_blank" rel="noopener noreferrer" data-i18n="foot_nl">Grupo LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/company/kuntai"                        class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/kuntai.negocios.conscientes"          class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://orgcodex.netlify.app/"                                  class="footer-link" target="_blank" rel="noopener noreferrer">Codex</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© <span id="year"></span> Kuntai — Business Awake. <span data-i18n="foot_rights">Todos los derechos reservados.</span></p>
+      <a href="/admin/" class="footer-admin-link" aria-label="Panel de administración">⬡ Admin</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════
+   DICCIONARIO i18n — ES / EN
+══════════════════════════════════════ */
+var LANG = {
+  es:{
+    tick1:'Liderazgo Consciente',tick2:'Diseño Organizacional',tick3:'Estrategia Viva',tick4:'Cultura de Alto Rendimiento',
+    tick5:'Toma de Decisiones',tick6:'Innovación Sistémica',tick7:'Equipos Autónomos',tick8:'Transformación Real',
+    nav_home:'Inicio',nav_articles:'Artículos',nav_topics:'Temas',nav_about:'Nosotros',nav_join:'Unirse al grupo',
+    hero_edition:'Vol. 04 — 2026',hero_kicker:'Conocimiento ejecutivo · Edición semanal',
+    hero_title:'Organiza\u00ADciones<br><em>vivas</em> para un<br>mundo <span class="accent">complejo</span>',
+    hero_desc:'Casos reales, herramientas probadas y marcos mentales para líderes que construyen organizaciones adaptables, humanas y de alto impacto.',
+    hero_cta1:'Leer esta semana',hero_cta2:'Unirse gratis →',
+    stat1:'Líderes activos',stat2:'Artículos publicados',stat3:'Categorías temáticas',
+    side_label:'En esta edición',
+    hl1_title:'El fin de la planificación anual: por qué tus OKRs no funcionan',hl1_time:'8 min · Esta semana',
+    hl2_title:'Directivos que escuchan: el superpoder más subestimado',hl2_time:'6 min · Esta semana',
+    hl3_title:'After Action Review: cómo el ejército aprendió a fallar bien',hl3_time:'5 min · Esta semana',
+    cat_all:'Todos',cat_strategy:'Estrategia',cat_leadership:'Liderazgo',cat_tools:'Herramientas',
+    cat_cases:'Casos',cat_culture:'Cultura',cat_innovation:'Innovación',cat_design:'Diseño org.',cat_decisions:'Decisiones',
+    sec_featured:'Artículo de la semana',sec_seeall:'Ver todos',sec_recent:'Artículos recientes',
+    sec_archive:'Ver archivo',sec_topics:'Explorar por tema',
+    loading_posts:'Cargando artículos...',no_posts:'No hay artículos publicados aún.',
+    feat_img_label:'Liderazgo<br>Consciente',feat_badge:'✦ Destacado',feat_time:'12 min de lectura',
+    badge_new:'Nuevo',badge_tool:'Herramienta',badge_case:'Caso',badge_framework:'Framework',
+    feat_title:'Por qué las organizaciones jerárquicas morirán en la próxima década — y qué hacer ahora',
+    feat_excerpt:'Las estructuras piramidales fueron diseñadas para un mundo predecible. En un entorno de cambio constante, son una trampa.',
+    s1_title:'El modelo de los tres horizontes: planifica sin matar la agilidad',
+    s1_excerpt:'Cómo McKinsey piensa el tiempo y por qué deberías adoptarlo en tus revisiones trimestrales.',
+    s2_title:'Psicología de seguridad: el ingrediente invisible de los mejores equipos',
+    s2_excerpt:'El estudio de Google que cambió cómo entendemos la alta performance colectiva.',
+    s3_title:'Jobs-to-be-Done para equipos internos: ¿qué trabajo contrata tu organización?',
+    s3_excerpt:'Una forma radical de repensar roles, procesos y expectativas dentro de tu empresa.',
+    read:'Leer',
+    a1_img:'Estrategia<br>Adaptativa',a1_title:'Organizaciones Vivas: del organigrama al ecosistema',a1_excerpt:'El paso de estructuras rígidas a sistemas biológicos adaptables que responden en tiempo real al entorno.',
+    a2_img:'Decisiones<br>Complejas',a2_title:'Cynefin en la práctica: decide mejor en entornos caóticos',a2_excerpt:'El marco de Dave Snowden traducido a situaciones reales de directivos que deben actuar rápido sin datos completos.',
+    a3_img:'Feedback<br>Radical',a3_title:'Candor Radical: el método de Kim Scott para conversaciones difíciles',a3_excerpt:'Cómo dar feedback que transforma sin destruir la confianza. El modelo que usa Netflix y cambió Silicon Valley.',
+    a4_img:'Propósito<br>Real',a4_title:'Propósito no es un eslogan: cómo construirlo con tu equipo en 90 días',a4_excerpt:'Guía paso a paso para articular un propósito organizacional que no quede en el PowerPoint de bienvenida.',
+    a5_img:'Innovación<br>Sistemática',a5_title:'Design Thinking no es lo que crees: el lado oscuro del método IDEO',a5_excerpt:'Por qué tantos talleres de innovación fallan y qué condiciones organizacionales necesita realmente el método.',
+    a6_img:'Equipos<br>Autónomos',a6_title:'Buurtzorg: cómo 14,000 enfermeras se autogestionan sin jefes intermedios',a6_excerpt:'El caso holandés que rompió todos los esquemas del sector salud y qué principios pueden trasplantarse a tu organización.',
+    banner_eyebrow:'Comunidad Kuntai',banner_title:'Únete al grupo y<br><em>dialoga</em> con líderes',
+    banner_desc:'Un espacio en LinkedIn para directivos y líderes de LATAM que construyen organizaciones más humanas, adaptables y de alto impacto. Comparte, aprende y conecta.',
+    banner_cta:'Unirme al grupo →',banner_disc:'Comunidad en LinkedIn · Gratuito · Líderes de LATAM',
+    t1_count:'14 artículos',t2_count:'11 artículos',t3_count:'9 artículos',t4_count:'8 artículos',
+    t5_count:'6 artículos',t6_count:'5 artículos',t7_count:'4 artículos',t8_count:'3 artículos',
+    mani_label:'Nuestro enfoque',mani_title:'Lideramos el<br>cambio hacia<br><em>organizaciones</em><br>conscientes',
+    mani_p1:'Kuntai nació de una convicción simple: el mundo tiene suficiente teoría y demasiado poco conocimiento accionable. No publicamos frameworks por publicar — cada pieza que compartimos ha sido probada en organizaciones reales, con equipos reales, enfrentando problemas reales.',
+    mani_p2:'Somos practitioners primero, escritores segundo. Eso cambia la calidad de lo que lees.',
+    mani_cta:'Conocer más →',
+    val1_title:'Profundidad sobre volumen',val1_desc:'Un artículo a la semana, investigado a fondo, con fuentes, datos y perspectiva propia. Nunca contenido de relleno.',
+    val2_title:'Accionable por diseño',val2_desc:'Cada pieza termina con algo concreto: una herramienta, una pregunta, un experimento. Sin conclusiones vacías.',
+    val3_title:'Organizaciones como sistemas vivos',val3_desc:'Nuestra lente teórica: complejidad, sistemas adaptativos y teoría organizacional del siglo XXI.',
+    foot_tagline:'Casos y herramientas para liderar organizaciones vivas.',foot_col1:'Publicación',foot_col2:'Comunidad',
+    foot_featured:'Destacados',foot_nl:'Grupo LinkedIn',foot_rights:'Todos los derechos reservados.',
+    media_audio:'Audio',media_video:'Video'
+  },
+  en:{
+    tick1:'Conscious Leadership',tick2:'Organizational Design',tick3:'Living Strategy',tick4:'High-Performance Culture',
+    tick5:'Decision-Making',tick6:'Systemic Innovation',tick7:'Autonomous Teams',tick8:'Real Transformation',
+    nav_home:'Home',nav_articles:'Articles',nav_topics:'Topics',nav_about:'About',nav_join:'Join the group',
+    hero_edition:'Vol. 04 — 2026',hero_kicker:'Executive knowledge · Weekly edition',
+    hero_title:'<em>Living</em> organizations<br>for a complex<br><span class="accent">world</span>',
+    hero_desc:'Real cases, proven tools and mental frameworks for leaders building adaptable, human and high-impact organizations.',
+    hero_cta1:"This week's read",hero_cta2:'Join free →',
+    stat1:'Active leaders',stat2:'Published articles',stat3:'Topic categories',
+    side_label:'In this edition',
+    hl1_title:'The end of annual planning: why your OKRs are not working',hl1_time:'8 min · This week',
+    hl2_title:'Leaders who listen: the most underrated superpower',hl2_time:'6 min · This week',
+    hl3_title:'After Action Review: how the military learned to fail well',hl3_time:'5 min · This week',
+    cat_all:'All',cat_strategy:'Strategy',cat_leadership:'Leadership',cat_tools:'Tools',
+    cat_cases:'Cases',cat_culture:'Culture',cat_innovation:'Innovation',cat_design:'Org. Design',cat_decisions:'Decisions',
+    sec_featured:'Article of the week',sec_seeall:'View all',sec_recent:'Recent articles',
+    sec_archive:'View archive',sec_topics:'Explore by topic',
+    loading_posts:'Loading articles...',no_posts:'No published articles yet.',
+    feat_img_label:'Conscious<br>Leadership',feat_badge:'✦ Featured',feat_time:'12 min read',
+    badge_new:'New',badge_tool:'Tool',badge_case:'Case',badge_framework:'Framework',
+    feat_title:'Why hierarchical organizations will die in the next decade — and what to do now',
+    feat_excerpt:'Pyramid structures were designed for a predictable world. In an environment of constant change, they are a trap.',
+    s1_title:'The three horizons model: plan without killing agility',
+    s1_excerpt:'How McKinsey thinks about time and why you should adopt it in your quarterly reviews.',
+    s2_title:'Psychological safety: the invisible ingredient of the best teams',
+    s2_excerpt:"Google's study that changed how we understand collective high performance.",
+    s3_title:'Jobs-to-be-Done for internal teams: what job does your organization hire?',
+    s3_excerpt:'A radical way to rethink roles, processes and expectations inside your company.',
+    read:'Read',
+    a1_img:'Adaptive<br>Strategy',a1_title:'Living Organizations: from org chart to ecosystem',a1_excerpt:'The shift from rigid structures to adaptive biological systems that respond to the environment in real time.',
+    a2_img:'Complex<br>Decisions',a2_title:'Cynefin in practice: decide better in chaotic environments',a2_excerpt:"Dave Snowden's framework translated into real situations for executives who must act fast without complete data.",
+    a3_img:'Radical<br>Feedback',a3_title:"Radical Candor: Kim Scott's method for difficult conversations",a3_excerpt:'How to give feedback that transforms without destroying trust. The model used by Netflix that changed Silicon Valley.',
+    a4_img:'Real<br>Purpose',a4_title:'Purpose is not a slogan: how to build it with your team in 90 days',a4_excerpt:'Step-by-step guide to articulating an organizational purpose that does not stay buried in the onboarding deck.',
+    a5_img:'Systematic<br>Innovation',a5_title:"Design Thinking is not what you think: IDEO's method dark side",a5_excerpt:'Why so many innovation workshops fail and what organizational conditions the method really needs.',
+    a6_img:'Autonomous<br>Teams',a6_title:'Buurtzorg: how 14,000 nurses self-manage without middle managers',a6_excerpt:'The Dutch case that broke every rule in healthcare and what principles can be transplanted to your organization.',
+    banner_eyebrow:'Kuntai Community',banner_title:'Join the group and<br><em>connect</em> with leaders',
+    banner_desc:'A LinkedIn space for executives and leaders across LATAM building more human, adaptable and high-impact organizations. Share, learn and connect.',
+    banner_cta:'Join the group →',banner_disc:'LinkedIn Community · Free · LATAM Leaders',
+    t1_count:'14 articles',t2_count:'11 articles',t3_count:'9 articles',t4_count:'8 articles',
+    t5_count:'6 articles',t6_count:'5 articles',t7_count:'4 articles',t8_count:'3 articles',
+    mani_label:'Our approach',mani_title:'We lead change<br>toward<br><em>conscious</em><br>organizations',
+    mani_p1:"Kuntai was born from a simple conviction: the world has enough theory and far too little actionable knowledge. We don't publish frameworks for the sake of it — every piece we share has been tested in real organizations, with real teams, facing real problems.",
+    mani_p2:'We are practitioners first, writers second. That changes the quality of what you read.',
+    mani_cta:'Learn more →',
+    val1_title:'Depth over volume',val1_desc:'One article per week, thoroughly researched, with sources, data and our own perspective. Never filler content.',
+    val2_title:'Actionable by design',val2_desc:'Every piece ends with something concrete: a tool, a question, an experiment. No empty conclusions.',
+    val3_title:'Organizations as living systems',val3_desc:'Our theoretical lens: complexity, adaptive systems and 21st-century organizational theory.',
+    foot_tagline:'Cases and tools for leading living organizations.',foot_col1:'Publication',foot_col2:'Community',
+    foot_featured:'Featured',foot_nl:'LinkedIn Group',foot_rights:'All rights reserved.',
+    media_audio:'Audio',media_video:'Video'
+  }
+};
+
+/* ══════════════════════════════════════
+   MOTOR i18n
+══════════════════════════════════════ */
+var currentLang   = 'es';
+var currentFilter = 'all';
+var allPosts      = [];
+
+function buildTicker(lang) {
+  var inner = document.getElementById('tickerInner');
+  if (!inner) return;
+  var d = LANG[lang];
+  var keys = ['tick1','tick2','tick3','tick4','tick5','tick6','tick7','tick8'];
+  var html = '';
+  for (var r = 0; r < 2; r++) {
+    keys.forEach(function(k) {
+      html += '<span class="ticker-item">' + d[k] + '</span><span class="ticker-sep">·</span>';
+    });
+  }
+  inner.innerHTML = html;
+}
+
+function applyLang(lang) {
+  if (!LANG[lang]) return;
+  document.body.classList.add('lang-switching');
+  setTimeout(function() {
+    document.documentElement.lang = lang;
+    var d = LANG[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var k = el.getAttribute('data-i18n');
+      if (d[k] !== undefined) el.innerHTML = d[k];
+    });
+    buildTicker(lang);
+    if (allPosts.length > 0) renderCards(allPosts, currentFilter);
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.content = lang === 'es'
+      ? 'Kuntai Business Awake — Casos y herramientas para liderar organizaciones vivas.'
+      : 'Kuntai Business Awake — Cases and tools for leading living organizations.';
+    var btn = document.getElementById('langToggle');
+    if (btn) {
+      btn.setAttribute('data-active', lang);
+      var es = btn.querySelector('.lang-label-es');
+      var en = btn.querySelector('.lang-label-en');
+      if (es && en) {
+        es.style.fontWeight = lang === 'es' ? '700' : '400';
+        es.style.color      = lang === 'es' ? 'var(--B)' : 'var(--G3)';
+        en.style.fontWeight = lang === 'en' ? '700' : '400';
+        en.style.color      = lang === 'en' ? 'var(--B)' : 'var(--G3)';
+      }
+    }
+    try { localStorage.setItem('kuntai_lang', lang); } catch(e) {}
+    document.body.classList.remove('lang-switching');
+  }, 120);
+}
+
+function toggleLang() {
+  currentLang = currentLang === 'es' ? 'en' : 'es';
+  applyLang(currentLang);
+}
+
+/* ══════════════════════════════════════
+   CMS LOADER
+══════════════════════════════════════ */
+var PH = ['ph-1','ph-2','ph-3','ph-4','ph-5','ph-6'];
+var CAT_ES = {strategy:'Estrategia',leadership:'Liderazgo',tools:'Herramientas',cases:'Casos',culture:'Cultura',innovation:'Innovación',design:'Diseño org.',decisions:'Decisiones'};
+var CAT_EN = {strategy:'Strategy',leadership:'Leadership',tools:'Tools',cases:'Cases',culture:'Culture',innovation:'Innovation',design:'Org. Design',decisions:'Decisions'};
+
+function catLabel(cat, lang) { return lang === 'en' ? (CAT_EN[cat] || cat) : (CAT_ES[cat] || cat); }
+
+function mediaBadges(post, lang) {
+  var d = LANG[lang]; var h = '';
+  if (post.audio_url)   h += '<span class="media-badge media-badge--audio">🎵 ' + d.media_audio + '</span>';
+  if (post.youtube_url) h += '<span class="media-badge media-badge--video">▶ '  + d.media_video + '</span>';
+  return h ? '<div class="media-indicators">' + h + '</div>' : '';
+}
+
+function buildCard(post, idx, lang) {
+  var ph     = PH[idx % PH.length];
+  var cat    = post.category || 'strategy';
+  var lbl    = catLabel(cat, lang);
+  var title  = (lang === 'en' && post.title_en)   ? post.title_en   : (post.title_es   || '');
+  var exc    = (lang === 'en' && post.excerpt_en)  ? post.excerpt_en  : (post.excerpt_es  || '');
+  var rt     = post.read_time ? post.read_time + ' min' : '5 min';
+  var author = post.author || 'Kuntai';
+  var slug   = post.slug || '#';
+  var d      = LANG[lang];
+  var img    = post.cover_image
+    ? '<img src="' + post.cover_image + '" alt="' + title.replace(/"/g,'') + '" loading="lazy">'
+    : '<div class="img-ph ' + ph + '" style="width:100%;height:100%;position:relative;"><div class="ph-pattern"></div><span class="ph-label">' + lbl + '</span></div>';
+  return '<article class="card-article" data-cat="' + cat + '" tabindex="0"'
+    + ' onclick="window.location.href=\'/articulo/' + slug + '\'"'
+    + ' onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();window.location.href=\'/articulo/' + slug + '\'}">'
+    + '<div class="card-article-img">' + img + mediaBadges(post, lang) + '</div>'
+    + '<div class="card-article-meta"><span class="badge badge-b">' + lbl + '</span><span class="card-time">' + rt + '</span></div>'
+    + '<h3 class="card-article-title">' + title + '</h3>'
+    + '<p class="card-article-excerpt">' + exc + '</p>'
+    + '<div class="card-article-footer"><div class="card-author">'
+    + '<div class="card-author-av" aria-hidden="true">' + author.charAt(0).toUpperCase() + '</div>'
+    + '<span class="card-author-name">' + author + '</span></div>'
+    + '<span class="card-read-btn">' + (d.read || 'Leer') + '</span></div></article>';
+}
+
+function renderCards(posts, filter) {
+  var grid = document.getElementById('articlesGrid');
+  if (!grid) return;
+  var list = filter === 'all' ? posts : posts.filter(function(p){ return p.category === filter; });
+  grid.innerHTML = list.length
+    ? list.map(function(p,i){ return buildCard(p,i,currentLang); }).join('')
+    : '<div class="articles-empty"><div class="articles-empty-icon">📭</div><p class="articles-empty-text">' + (LANG[currentLang].no_posts || 'Sin artículos.') + '</p></div>';
+  observeCards();
+}
+
+function showFallback() {
+  var loading  = document.getElementById('articlesLoading');
+  var grid     = document.getElementById('articlesGrid');
+  var fallback = document.getElementById('articlesFallback');
+  if (loading)  loading.style.display  = 'none';
+  if (grid)     grid.style.display     = 'none';
+  if (fallback) { fallback.style.display = ''; observeCards(); }
+}
+
+function loadCMSPosts() {
+  fetch('/content/posts/index.json')
+    .then(function(r){ if (!r.ok) throw new Error('no-cms'); return r.json(); })
+    .then(function(data) {
+      allPosts = (data.posts || data || []).filter(function(p){ return p.status === 'published' || p.status === 'featured'; });
+      var loading  = document.getElementById('articlesLoading');
+      var grid     = document.getElementById('articlesGrid');
+      var fallback = document.getElementById('articlesFallback');
+      if (loading) loading.style.display = 'none';
+      if (allPosts.length) {
+        if (grid)     grid.style.display = '';
+        if (fallback) fallback.style.display = 'none';
+        renderCards(allPosts, currentFilter);
+      } else { showFallback(); }
+    })
+    .catch(showFallback);
+}
+
+/* ══════════════════════════════════════
+   FILTRO CATEGORÍAS
+══════════════════════════════════════ */
+function filterCat(btn, catKey) {
+  document.querySelectorAll('.cat-pill').forEach(function(p){ p.classList.remove('active'); });
+  if (btn && btn.classList) btn.classList.add('active');
+  currentFilter = catKey || 'all';
+  if (allPosts.length) {
+    renderCards(allPosts, currentFilter);
+  } else {
+    document.querySelectorAll('#articlesFallback .card-article').forEach(function(c){
+      c.style.display = (currentFilter === 'all' || c.getAttribute('data-cat') === currentFilter) ? '' : 'none';
+    });
+  }
+  var sec = document.getElementById('articulos');
+  if (sec) sec.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+/* ══════════════════════════════════════
+   MENÚ MÓVIL
+══════════════════════════════════════ */
+(function(){
+  var btn   = document.getElementById('mobileMenuBtn');
+  var links = document.querySelector('.nav-links');
+  if (!btn || !links) return;
+  btn.addEventListener('click', function(){
+    var open = links.getAttribute('data-open') === 'true';
+    if (open) {
+      links.style.cssText = '';
+      links.setAttribute('data-open','false');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Abrir menú');
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:4.25rem;left:0;right:0;background:rgba(250,250,247,0.98);backdrop-filter:blur(16px);padding:1rem var(--pad);gap:.25rem;border-bottom:1px solid #e8e8e4;z-index:99;animation:fadeIn .22s ease both';
+      links.setAttribute('data-open','true');
+      btn.setAttribute('aria-expanded','true');
+      btn.setAttribute('aria-label','Cerrar menú');
+    }
+  });
+  links.querySelectorAll('.nav-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.style.cssText = '';
+      links.setAttribute('data-open','false');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 768) {
+      links.style.cssText = '';
+      links.setAttribute('data-open','false');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+
+/* ══════════════════════════════════════
+   SCROLL-REVEAL
+══════════════════════════════════════ */
+function observeCards() {
+  if (!('IntersectionObserver' in window)) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.style.animationPlayState = 'running'; obs.unobserve(e.target); }
+    });
+  },{ threshold:0.06 });
+  document.querySelectorAll('.card-article,.manifesto-val,.topic-card').forEach(function(el,i){
+    el.style.animationDelay = (i % 3 * 0.1) + 's';
+    el.style.animationPlayState = 'paused';
+    el.style.opacity = '0';
+    el.style.animation = 'fadeUp .6s cubic-bezier(0.16,1,0.3,1) both';
+    obs.observe(el);
+  });
+}
+
+/* ══════════════════════════════════════
+   NETLIFY IDENTITY
+══════════════════════════════════════ */
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', function(user){
+    if (!user) window.netlifyIdentity.on('login', function(){ document.location.href = '/admin/'; });
+  });
+}
+
+/* ══════════════════════════════════════
+   INIT
+══════════════════════════════════════ */
+document.getElementById('year').textContent = new Date().getFullYear();
+buildTicker('es');
+(function(){
+  var saved;
+  try { saved = localStorage.getItem('kuntai_lang'); } catch(e){}
+  if (saved && LANG[saved]) { currentLang = saved; applyLang(currentLang); }
+})();
+loadCMSPosts();
+observeCards();
+</script>
+</body>
+</html>
